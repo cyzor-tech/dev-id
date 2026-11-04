@@ -5,9 +5,10 @@
   "type": "module",
   "description": "DEV ID — preserved dashboard template and local development preview",
   "scripts": {
-    "dev": "node scripts/preview.mjs",
-    "start": "node scripts/preview.mjs",
-    "check": "node scripts/check-template.mjs"
+    "dev": "node scripts/localize.mjs && node scripts/preview.mjs",
+    "start": "node scripts/localize.mjs && node scripts/preview.mjs",
+    "build": "node scripts/localize.mjs",
+    "check": "node scripts/check-template.mjs && node scripts/localize.mjs"
   },
   "engines": { "node": ">=22" }
 }

@@ -1,0 +1,9 @@
+/* Allow Portuguese copy to fit without changing the template's visual language. */
+header input { min-width: 0; width: 100%; }
+header > div > .relative { min-width: 0; }
+header > div > .ml-auto { flex-shrink: 0; }
+@media (max-width: 639px) {
+  header > div { flex-wrap: wrap; }
+  header > div > .relative { order: 3; flex-basis: 100%; max-width: none; }
+  header > div > .lg\:hidden { flex-shrink: 0; }
+}

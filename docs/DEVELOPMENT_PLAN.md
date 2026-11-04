@@ -54,7 +54,8 @@ Revisar contraste, rótulos dos ícones, teclado e responsividade durante a migr
 ## Decisões pendentes
 
 - Recuperar o fonte React original ou reconstruir fielmente a partir do HTML.
-- Definir idioma inicial do produto (o template está em inglês).
+- Idioma inicial definido: português do Brasil. O template original em inglês foi preservado;
+  a versão pt-BR é gerada separadamente a partir de `src/pt-BR.json`.
 - Escolher hospedagem, autenticação e banco ao iniciar persistência.
 - Confirmar direitos de uso do template e das imagens antes de publicação comercial.
 
@@ -68,3 +69,13 @@ Revisar contraste, rótulos dos ícones, teclado e responsividade durante a migr
   cards filtráveis e o botão de limpar restaurou o conteúdo.
 - Não foram testados todos os botões, teclado, tamanhos móveis, OAuth ou serviços externos.
   A marcação de tarefas foi identificada no código, sem validação interativa nesta etapa.
+
+## Localização pt-BR
+
+- 122 textos traduzidos em `src/pt-BR.json`, incluindo tarefas, menus, busca e notificações.
+- Datas demonstrativas mantidas como demonstração, com rótulos e horários em português.
+- Números de experiência usam separador decimal brasileiro; nomes de tecnologias e projetos são mantidos.
+- `npm run build` gera a versão localizada em `build/`, sem modificar a referência original.
+- Cabeçalho adaptado para acomodar os textos em português no celular.
+- Conferidos os tamanhos 320, 768, 1024 e 1440 px, a busca por “sênior” e a notificação “Editar • Em breve”.
+- O percentual mostrado ao clicar em uma oportunidade agora usa o valor da própria oportunidade.

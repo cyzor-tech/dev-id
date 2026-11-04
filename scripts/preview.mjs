@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 
 // Serve only an explicit allowlist; never expose the project directory or secrets.
 const assets = new Map([
-  ['/', [new URL('../standalone/dev-id-dashboard.html', import.meta.url), 'text/html; charset=utf-8']],
+  ['/', [new URL('../build/index.html', import.meta.url), 'text/html; charset=utf-8']],
   ['/standalone/dev-id-dashboard.html', [new URL('../standalone/dev-id-dashboard.html', import.meta.url), 'text/html; charset=utf-8']],
   ['/referencia-visual.jpg', [new URL('../referencia-visual.jpg', import.meta.url), 'image/jpeg']],
 ]);
