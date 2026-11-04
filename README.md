@@ -1,6 +1,6 @@
 # DEV ID
 
-Prévia do espaço do desenvolvedor, construída com React, TypeScript, Vite e Tailwind. A aplicação reúne as dez páginas da `nova-versão-full` em uma navegação única e compartilha menu lateral, barra superior, navegação móvel e rodapé.
+Prévia do espaço do desenvolvedor. A página inicial usa o painel pt-BR aprovado anteriormente, com seus ajustes visuais preservados. As outras nove páginas da `nova-versão-full` foram integradas com React, TypeScript, Vite e Tailwind e usam navegação compartilhada.
 
 ## Executar
 
@@ -17,7 +17,7 @@ Abra [http://127.0.0.1:5173](http://127.0.0.1:5173). Para conferir a compilaçã
 
 | Rota | Página |
 | --- | --- |
-| `/` | Painel |
+| `/` | Painel original validado |
 | `/identidade` | Identidade |
 | `/carreira` | Carreira |
 | `/competencias` | Competências |
@@ -28,7 +28,7 @@ Abra [http://127.0.0.1:5173](http://127.0.0.1:5173). Para conferir a compilaçã
 | `/analises` | Análises |
 | `/personalizacao` | Personalização |
 
-Cada página está em `app/pages/`. Os componentes de navegação estão em `app/components/Shell.tsx`; dados de demonstração e tipos estão em `app/model.ts`. O código fonte entregue pela outra IA permanece intacto em `nova-versão-full/` como referência.
+O painel validado é gerado a partir de `standalone/dev-id-dashboard.html`, `src/pt-BR.json` e `src/pt-BR.css` em `public/painel-validado.html`. As outras páginas estão em `app/pages/`. Os componentes de navegação dessas páginas estão em `app/components/Shell.tsx`; dados de demonstração e tipos estão em `app/model.ts`. O código fonte entregue pela outra IA permanece intacto em `nova-versão-full/` como referência.
 
 ## Estado da prévia
 

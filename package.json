@@ -5,9 +5,9 @@
   "type": "module",
   "description": "DEV ID Developer Workspace",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "start": "vite --host 127.0.0.1",
-    "build": "vite build",
+    "dev": "node scripts/localize.mjs && vite --host 127.0.0.1",
+    "start": "node scripts/localize.mjs && vite --host 127.0.0.1",
+    "build": "node scripts/localize.mjs && vite build",
     "legacy:dev": "node scripts/localize.mjs && node scripts/preview.mjs",
     "check:original": "node scripts/check-template.mjs && node scripts/localize.mjs"
   },

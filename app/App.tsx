@@ -54,8 +54,8 @@ function readDemoData<T>(key: string, fallback: T): T {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>(() => pageFromPath(window.location.pathname));
-  const navigate = (page: PageId) => { window.history.pushState({}, "", PAGE_PATHS[page]); setCurrentPage(page); window.scrollTo(0, 0); };
-  useEffect(() => { const onPop = () => setCurrentPage(pageFromPath(window.location.pathname)); window.addEventListener("popstate", onPop); return () => window.removeEventListener("popstate", onPop); }, []);
+  const navigate = (page: PageId) => { if (page === 'dashboard') { window.location.assign('/'); return; } window.history.pushState({}, "", PAGE_PATHS[page]); setCurrentPage(page); window.scrollTo(0, 0); };
+  useEffect(() => { const onPop = () => { if (window.location.pathname === '/') window.location.assign('/'); else setCurrentPage(pageFromPath(window.location.pathname)); }; window.addEventListener("popstate", onPop); return () => window.removeEventListener("popstate", onPop); }, []);
   useEffect(() => { document.title = `${PAGE_NAMES[currentPage]} — DEV ID`; }, [currentPage]);
   const [skills, setSkills] = useState<Skill[]>(() => readDemoData('dev-id:skills', MOCK_SKILLS));
   const [projects, setProjects] = useState<Project[]>(() => readDemoData('dev-id:projects', MOCK_PROJECTS));
