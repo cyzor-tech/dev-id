@@ -550,6 +550,3 @@ export default function App() {
     </div>
   );
 }
-
-
-\n

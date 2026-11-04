@@ -65,5 +65,3 @@ export function CvPage({ versions, selectedId, setSelectedId, sections, setSecti
     </div>
   );
 }
-
-\n

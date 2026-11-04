@@ -111,5 +111,3 @@ export function AnalyticsPage({ period, setPeriod, projects, pushToast }: any) {
     </div>
   );
 }
-
-\n

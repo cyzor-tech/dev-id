@@ -113,4 +113,3 @@ export function ProjectArt({ pattern, color }: { pattern: string; color: string 
     </div>
   );
 }
-\n

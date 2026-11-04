@@ -139,5 +139,3 @@ export function SkillsPage(props: any) {
     </div>
   );
 }
-
-\n

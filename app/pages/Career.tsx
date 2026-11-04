@@ -100,5 +100,3 @@ export function CareerPage({ pushToast }: any) {
     </div>
   );
 }
-
-\n

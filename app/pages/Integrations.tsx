@@ -77,5 +77,3 @@ export function IntegrationsPage({ connected, setConnected, pushToast }: any) {
     </div>
   );
 }
-
-\n

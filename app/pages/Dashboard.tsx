@@ -100,5 +100,3 @@ export function DashboardPage({ pushToast, skills, projects, topSkills, stats, s
     </div>
   );
 }
-
-\n

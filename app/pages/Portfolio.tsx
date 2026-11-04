@@ -82,5 +82,3 @@ export function PortfolioPage({ projects, portfolioFilter, setPortfolioFilter, l
     </div>
   );
 }
-
-\n

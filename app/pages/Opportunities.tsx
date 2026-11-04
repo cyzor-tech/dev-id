@@ -119,5 +119,3 @@ export function OpportunitiesPage({ opportunities, oppTab, setOppTab, filters, s
     </div>
   );
 }
-
-\n

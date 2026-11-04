@@ -127,5 +127,3 @@ export function IdentityPage({ pushToast }: any) {
     </div>
   );
 }
-
-\n

@@ -77,5 +77,3 @@ export function SettingsPage({ themeSel, setThemeSel, publicLayout, setPublicLay
     </div>
   );
 }
-
-\n
