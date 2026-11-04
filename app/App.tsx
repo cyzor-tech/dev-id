@@ -284,7 +284,7 @@ export default function App() {
           <Topbar search={search} setSearch={setSearch} currentConfig={currentConfig} pushToast={pushToast} onAction={handleHeaderAction} />
 
           <div className="px-4 lg:px-6 xl:px-8 py-5 lg:py-6 pb-[88px] lg:pb-6">
-            <div className="max-w-[1480px] mx-auto flex flex-col gap-5">
+            <div className="max-w-[1600px] mx-auto flex flex-col gap-5">
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 text-[12px] flex-wrap">
                 <span className="text-[#8E8E93] font-medium">Área do desenvolvedor</span>

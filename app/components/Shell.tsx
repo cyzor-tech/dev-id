@@ -77,4 +77,4 @@ export function Topbar({search,setSearch,currentConfig,pushToast,onAction}:Topba
               </div>
             </div>
           </header>);}
-export function Footer(){return <footer className="max-w-[1480px] mx-auto px-4 lg:px-6 xl:px-8 pb-6 text-[11px] text-[#8E8E93] flex flex-wrap justify-between gap-2"><span>DEV ID · Identidade / Evidências / Oportunidades</span><span>Prévia com dados demonstrativos</span></footer>;}
+export function Footer(){return <footer className="max-w-[1600px] mx-auto mt-6 pb-6 text-[11px] text-[#8E8E93] flex flex-wrap justify-between gap-2"><span>DEV ID · Identidade / Evidências / Oportunidades</span><span>Prévia com dados demonstrativos</span></footer>;}
