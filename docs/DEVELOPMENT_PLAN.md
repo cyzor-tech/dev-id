@@ -1,5 +1,14 @@
 # DEV ID — plano inicial do Developer Dashboard
 
+## Página de Identidade — primeira entrega
+
+Objetivo: permitir que o desenvolvedor apresente seu perfil, expresse o que busca,
+separe informações declaradas de evidências e escolha a visibilidade dos dados.
+A página `/identidade` mantém a linguagem visual do dashboard e é acessível pela
+navegação. Nesta fase, edição e preferências ficam no navegador; dados demonstrativos
+não equivalem a verificação real. Próximas etapas: conta, persistência no servidor,
+perfil público e importação de evidências com consentimento.
+
 Data da inspeção: 03/11/2026, horário de São Paulo.
 
 ## Objetivo

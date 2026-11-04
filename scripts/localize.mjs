@@ -31,7 +31,8 @@ for (const [source, target] of templateTranslations) {
 if (!app.includes('children:[o.years,')) throw new Error('Campo de experiência não encontrado.');
 app = app.replaceAll('children:[o.years,', 'children:[o.years.toLocaleString("pt-BR"),');
 app = app.replaceAll('onClick:()=>v(`${o.label} • Em breve`),className:',
-  '"aria-label":o.label,title:o.label,onClick:()=>v(`${o.label} • Em breve`),className:');
+  '"aria-label":o.label,title:o.label,onClick:()=>o.label==="Identidade"?location.assign("/identidade"):v(`${o.label} • Em breve`),className:');
+app = app.replace('onClick:()=>v("Em breve"),className:`w-11 h-11', 'onClick:()=>f===1?location.assign("/identidade"):v("Em breve"),className:`w-11 h-11');
 // Stable hooks keep layout corrections scoped to their respective cards.
 for (const [heading, className] of [
   ['Alex Nakamura', 'dev-profile'],

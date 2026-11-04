@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identidade — DEV ID</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/identity.css">
+  <script type="module" src="/src/identity.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="DEV ID — Painel">D</a>
+      <nav>
+        <a href="/" title="Painel" aria-label="Painel"><span>▦</span><span class="nav-label">Painel</span></a>
+        <a class="current" href="/identidade" aria-current="page" title="Identidade"><span>♙</span><span class="nav-label">Identidade</span></a>
+      </nav>
+      <div class="avatar-small" aria-label="Perfil demonstrativo AN">AN</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="eyebrow">IDENTIDADE / DEV ID</span><h1>Sua identidade profissional</h1><p>Apresente sua trajetória com clareza e escolha o que compartilhar.</p></div>
+        <div class="top-actions"><span class="demo-tag">PERFIL DE EXEMPLO</span><a href="/">Voltar ao painel</a></div>
+      </header>
+
+      <div class="layout">
+        <div class="primary">
+          <section class="card hero" aria-labelledby="hero-title">
+            <div class="hero-top"><span class="eyebrow">IDENTIDADE PROFISSIONAL</span><span class="status"><i></i> Disponível para propostas</span></div>
+            <div class="hero-person"><div class="portrait" aria-hidden="true">AN</div><div><h2 id="hero-title">Alex Nakamura</h2><p class="role">Engenheiro full stack sênior</p><p class="muted">Santos, Brasil · Trabalho remoto · GMT−3</p></div></div>
+            <p class="bio">Crio interfaces escaláveis com TypeScript, React e Node.js. Há 6 anos desenvolvo produtos usados por milhões de pessoas e contribuo com projetos de código aberto.</p>
+            <div class="hero-footer"><span>dev.id/alexnakamura</span><span>Exemplo de apresentação pública</span></div>
+          </section>
+
+          <section class="card" aria-labelledby="profile-title">
+            <div class="section-head"><div><span class="eyebrow">01 / PERFIL</span><h2 id="profile-title">Informações essenciais</h2></div><span class="small-note">Editável nesta prévia</span></div>
+            <form id="identity-form">
+              <div class="form-grid"><label>Nome de exibição<input name="name" maxlength="80" required></label><label>Título profissional<input name="headline" maxlength="100" required></label><label>Localização<input name="location" maxlength="100"></label><label>Modelo de trabalho<select name="workMode"><option>Remoto</option><option>Híbrido</option><option>Presencial</option></select></label></div>
+              <label class="full">Resumo profissional<textarea name="summary" rows="4" maxlength="500" aria-describedby="summary-hint"></textarea><span class="hint" id="summary-hint">Conte o que você constrói e qual impacto já gerou.</span></label>
+              <div class="form-footer"><span id="save-status" role="status" aria-live="polite">Alterações salvas apenas neste navegador.</span><button type="submit" class="button-dark">Salvar alterações</button></div>
+            </form>
+          </section>
+
+          <section class="card" aria-labelledby="evidence-title"><div class="section-head"><div><span class="eyebrow">02 / CONFIANÇA</span><h2 id="evidence-title">Evidências e competências</h2></div></div><p class="muted">Uma identidade útil mostra de onde vêm as informações. Nesta prévia, os itens abaixo são exemplos e ainda não foram validados por integrações.</p><div class="evidence-list"><div><span class="evidence-icon">TS</span><div><strong>TypeScript e React</strong><small>Competências declaradas · exemplos de projetos</small></div><span class="pill">Declarado</span></div><div><span class="evidence-icon">GH</span><div><strong>Projetos no GitHub</strong><small>Conexão futura para importar repositórios</small></div><span class="pill light">Não conectado</span></div><div><span class="evidence-icon">CV</span><div><strong>Experiência profissional</strong><small>Histórico informado no perfil</small></div><span class="pill">Declarado</span></div></div></section>
+        </div>
+
+        <div class="secondary">
+          <section class="card compact" aria-labelledby="visibility-title"><span class="eyebrow">CONTROLE</span><h2 id="visibility-title">Visibilidade</h2><p class="muted">Defina quais informações aparecerão quando seu perfil público estiver disponível.</p><label class="check"><input type="checkbox" id="public-profile"><span><strong>Perfil público</strong><small>Mostrar nome, título e resumo</small></span></label><label class="check"><input type="checkbox" id="show-location"><span><strong>Mostrar localização</strong><small>Exibir cidade e país</small></span></label><label class="check"><input type="checkbox" id="show-opportunities"><span><strong>Aberto a propostas</strong><small>Exibir disponibilidade</small></span></label><p class="privacy-note">Estas escolhas são salvas neste navegador. Publicação e compartilhamento reais exigem uma conta.</p></section>
+          <section class="card compact" aria-labelledby="interests-title"><span class="eyebrow">DIREÇÃO</span><h2 id="interests-title">O que busco</h2><p class="muted">Um resumo rápido ajuda empresas a entenderem o contexto da sua próxima etapa.</p><div class="facts"><div><span>Áreas</span><strong>Frontend · Plataforma</strong></div><div><span>Senioridade</span><strong>Sênior</strong></div><div><span>Formato</span><strong id="work-mode-preview">Remoto</strong></div></div></section>
+          <section class="card compact next"><span class="eyebrow">PRÓXIMO PASSO</span><h2>Fortaleça seu perfil</h2><p>Adicione projetos e explique sua contribuição em cada um. Isso dá contexto às competências declaradas.</p><a href="/">Ver painel <span aria-hidden="true">↗</span></a></section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
