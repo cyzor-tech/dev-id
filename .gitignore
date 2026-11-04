@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+build/
+work/
+*.log
+.DS_Store
+Thumbs.db
+
+# dist/ is an original template artifact: preserve it in version control.

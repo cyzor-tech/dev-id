@@ -1,0 +1,9 @@
+* text=auto
+
+# Preserve the byte-for-byte baseline across Windows and other platforms.
+/README.md -text
+/referencia-visual.jpg -text
+/dist/index.html -text
+/src/App.tsx -text
+/src/index.css -text
+/standalone/dev-id-dashboard.html -text

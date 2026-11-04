@@ -1,0 +1,13 @@
+{
+  "name": "dev-id",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DEV ID — preserved dashboard template and local development preview",
+  "scripts": {
+    "dev": "node scripts/preview.mjs",
+    "start": "node scripts/preview.mjs",
+    "check": "node scripts/check-template.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
