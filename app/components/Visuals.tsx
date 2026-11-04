@@ -14,19 +14,15 @@ import {
   Play, Pause, RotateCcw, Send, CheckCircle2, AlertCircle, Info, Crown, Gem
 } from "lucide-react";
 
-export function RadarChart({ hoveredIdx, setHoveredIdx }: { hoveredIdx: number | null; setHoveredIdx: (n: number | null) => void }) {
+export function RadarChart({ hoveredIdx, setHoveredIdx, axes = [
+  { label: "Frontend", value: 88 }, { label: "Backend", value: 78 },
+  { label: "DevOps", value: 71 }, { label: "Dados", value: 54 },
+  { label: "Mobile", value: 42 }, { label: "Ferramentas", value: 84 },
+] }: { hoveredIdx: number | null; setHoveredIdx: (n: number | null) => void; axes?: { label: string; value: number }[] }) {
   const size = 260;
   const cx = size / 2;
   const cy = size / 2;
   const maxR = 96;
-  const axes = [
-    { label: "Frontend", value: 88 },
-    { label: "Backend", value: 78 },
-    { label: "DevOps", value: 71 },
-    { label: "Data", value: 54 },
-    { label: "Mobile", value: 42 },
-    { label: "Tools", value: 84 },
-  ];
   const angleStep = (Math.PI * 2) / axes.length;
   const points = axes.map((a, i) => {
     const angle = -Math.PI / 2 + i * angleStep;
@@ -36,7 +32,7 @@ export function RadarChart({ hoveredIdx, setHoveredIdx }: { hoveredIdx: number |
   const polygon = points.map(p => `${p.x},${p.y}`).join(" ");
   return (
     <div className="relative">
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="overflow-visible">
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="max-w-full overflow-visible" role="img" aria-label={`Perfil técnico: ${axes.map(a => `${a.label} ${a.value}%`).join(', ')}`}>
         {[20, 40, 60, 80, 100].map((lvl) => {
           const pts = axes.map((_, i) => {
             const angle = -Math.PI / 2 + i * angleStep;
@@ -69,7 +65,7 @@ export function RadarChart({ hoveredIdx, setHoveredIdx }: { hoveredIdx: number |
       {hoveredIdx !== null && (
         <div className="absolute left-1/2 -translate-x-1/2 top-[68%] mt-2 bg-[#111] text-white text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-[0_8px_20px_rgba(0,0,0,0.2)] flex items-center gap-2">
           <span>{axes[hoveredIdx].label}</span>
-          <span className="bg-white/20 px-1.5 py-0.5 rounded-full">{axes[hoveredIdx].value}% • Senior</span>
+          <span className="bg-white/20 px-1.5 py-0.5 rounded-full">{axes[hoveredIdx].value}%</span>
         </div>
       )}
     </div>

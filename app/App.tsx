@@ -173,8 +173,8 @@ export default function App() {
     }, 1100);
   };
   const handleVerifyAll = () => {
-    pushToast("Verifying 4 skills with GitHub • Scanning commits...");
-    setTimeout(() => { setSkills((prev) => prev.map(s => s.status === "Evidenced" ? { ...s, status: "Verified" as SkillStatus } : s)); pushToast("All matched skills verified • 68% → 84%"); }, 1500);
+    pushToast("Simulando verificação das competências com evidências...");
+    setTimeout(() => { setSkills((prev) => prev.map(s => s.status === "Evidenced" ? { ...s, status: "Verified" as SkillStatus } : s)); pushToast("Simulação concluída nesta prévia"); }, 1500);
   };
   const handleAddSkill = async () => {
     if (!form.name) { pushToast("Skill name required"); return; }

@@ -50,11 +50,11 @@ export function MobileNav({navItems,currentPage,setCurrentPage}:NavProps){return
 type TopbarProps = { search: string; setSearch: Dispatch<SetStateAction<string>>; currentConfig: {placeholder:string;actionLabel:string;actionIcon:ComponentType<{size?:number}>};pushToast:(message:string)=>void;onAction:()=>void };
 export function Topbar({search,setSearch,currentConfig,pushToast,onAction}:TopbarProps){return (<header data-safe-area-sticky-top className="sticky z-20 bg-[#F8F5F1]/85 backdrop-blur-[16px] border-b border-transparent" style={{ top: "var(--safe-area-inset-top)" }}>
             <div className="flex items-center gap-3 px-4 lg:px-8 py-4 lg:py-5">
-              <div className="lg:hidden w-9 h-9 rounded-[10px] bg-[#111] flex items-center justify-center text-white font-bold">◈</div>
-              <div className="flex-1 max-w-[560px] relative group">
+              <div className="lg:hidden shrink-0 w-9 h-9 rounded-[10px] bg-[#111] flex items-center justify-center text-white font-bold">◈</div>
+              <div className="flex-1 min-w-0 max-w-[560px] relative group">
                 <div className="h-[44px] bg-white border border-[#F0EDE8] rounded-full flex items-center px-4 gap-3 shadow-[0_2px_12px_rgba(0,0,0,0.03)] group-focus-within:shadow-[0_4px_20px_rgba(0,0,0,0.06)] group-focus-within:border-[#E8E2D8] transition-all">
                   <Search size={18} className="text-[#8E8E93] shrink-0" />
-                  <input aria-label="Buscar nesta página" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={currentConfig.placeholder} className="flex-1 bg-transparent outline-none text-[13.5px] font-medium placeholder:text-[#A8A8AD] text-[#111]" />
+                  <input aria-label="Buscar nesta página" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={currentConfig.placeholder} className="flex-1 min-w-0 bg-transparent outline-none text-[13.5px] font-medium placeholder:text-[#A8A8AD] text-[#111]" />
                   <div className="flex items-center gap-2">
                     {search && <button aria-label="Limpar busca" onClick={() => setSearch("")} className="w-6 h-6 rounded-full bg-[#F6F2EB] flex items-center justify-center text-[#8E8E93] hover:text-[#111]"><X size={12} /></button>}
                     <div className="w-[1px] h-5 bg-[#F0EDE8]" />
@@ -62,14 +62,14 @@ export function Topbar({search,setSearch,currentConfig,pushToast,onAction}:Topba
                   </div>
                 </div>
               </div>
-              <div className="ml-auto flex items-center gap-2">
+              <div className="ml-auto shrink-0 flex items-center gap-2">
                 <div className="hidden md:flex items-center gap-2">
                   <div className="h-9 px-3 rounded-full bg-white border border-[#F0EDE8] flex items-center gap-2 text-[11px] font-medium text-[#8E8E93]"><div className="w-2 h-2 rounded-full bg-[#1BC47D]" />Perfil de exemplo</div>
                 </div>
                 <button
                   onClick={onAction}
                   aria-label={currentConfig.actionLabel}
-                  className="h-10 lg:h-[44px] px-5 bg-[#111] text-white rounded-full flex items-center gap-2 text-[13px] font-semibold tracking-[-0.01em] hover:bg-black transition-colors shadow-[0_4px_16px_rgba(0,0,0,0.12)]"
+                  className="h-10 lg:h-[44px] px-3 sm:px-5 bg-[#111] text-white rounded-full flex items-center gap-2 text-[13px] font-semibold tracking-[-0.01em] hover:bg-black transition-colors shadow-[0_4px_16px_rgba(0,0,0,0.12)]"
                 >
                   <currentConfig.actionIcon size={16} />
                   <span className="hidden sm:inline">{currentConfig.actionLabel}</span>
