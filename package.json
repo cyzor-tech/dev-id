@@ -3,12 +3,30 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "DEV ID — preserved dashboard template and local development preview",
+  "description": "DEV ID Developer Workspace",
   "scripts": {
-    "dev": "node scripts/localize.mjs && node scripts/preview.mjs",
-    "start": "node scripts/localize.mjs && node scripts/preview.mjs",
-    "build": "node scripts/localize.mjs",
-    "check": "node scripts/check-template.mjs && node scripts/localize.mjs"
+    "dev": "vite --host 127.0.0.1",
+    "start": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "legacy:dev": "node scripts/localize.mjs && node scripts/preview.mjs",
+    "check:original": "node scripts/check-template.mjs && node scripts/localize.mjs"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "lucide-react": "^1.67.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "autoprefixer": "^10.6.2",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
 }

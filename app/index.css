@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F6F2EB;
+  --bg-soft: #F8F5F1;
+  --card: #FFFFFF;
+  --border: #F0EDE8;
+  --border-strong: #E8E2D8;
+  --text: #111111;
+  --muted: #8E8E93;
+  --muted-2: #A8A8AD;
+  --pill-black: #111111;
+  --accent: #FF5A2C;
+  --accent-soft: #FFF0EC;
+  --green: #1BC47D;
+  --shadow-card: 0 8px 32px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+* { font-family: "Geist", -apple-system, BlinkMacSystemFont, sans-serif; }
+.mono { font-family: "Geist Mono", monospace; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+.card-premium {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.card-premium:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+.pill-black {
+  background: var(--pill-black);
+  color: white;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pill-orange {
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.pill-soft {
+  background: #F6F2EB;
+  color: #111;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* iOS Toggle */
+.toggle {
+  width: 36px;
+  height: 22px;
+  background: #EDE8E0;
+  border-radius: 999px;
+  position: relative;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid #E8E2D8;
+}
+.toggle.active {
+  background: var(--pill-black);
+  border-color: var(--pill-black);
+}
+.toggle-thumb {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.toggle.active .toggle-thumb {
+  transform: translateX(14px);
+}

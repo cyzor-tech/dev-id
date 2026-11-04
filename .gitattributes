@@ -7,3 +7,5 @@
 /src/App.tsx -text
 /src/index.css -text
 /standalone/dev-id-dashboard.html -text
+/docs/template-original/README.md -text
+/nova-versão-full/** -text
