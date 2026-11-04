@@ -2,6 +2,73 @@
 header input { min-width: 0; width: 100%; }
 header > div > .relative { min-width: 0; }
 header > div > .ml-auto { flex-shrink: 0; }
+
+/* Keep the verification badge and availability status on the same center line. */
+.dev-profile > div:first-child {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.dev-profile > div:first-child > div { flex-shrink: 0; }
+.dev-profile > div:first-child > div:first-child > div { flex-shrink: 0; }
+.dev-profile > div:first-child > div:first-child > span {
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+.dev-profile > div:first-child > div:last-child { margin-left: auto; }
+.dev-profile > div:first-child > div:last-child > span { white-space: nowrap; }
+
+/* Center every marker on both its rail and the 36px company icon. */
+.dev-career > .relative > .absolute {
+  display: none;
+}
+.dev-career > .relative > .relative:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  top: 18px;
+  bottom: -18px;
+  left: -15.5px;
+  background: #F0EDE8;
+  pointer-events: none;
+}
+.dev-career > .relative > .relative > .absolute { left: -22px; top: 11px; }
+.dev-career > div:first-child { align-items: flex-start; gap: 12px; }
+.dev-career > div:first-child > span { flex-shrink: 0; }
+
+/* Separate time and affinity, and give wrapping labels one continuous shape. */
+.dev-opportunities { container-type: inline-size; }
+.dev-opportunities > .grid > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.dev-opportunities > .grid > div > div:first-child {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.dev-opportunities > .grid > div > div:first-child > span { white-space: nowrap; }
+.dev-opportunities > .grid > div > div:first-child > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+}
+.dev-opportunities > .grid > div > div:nth-child(2) { min-height: 3.75em; }
+.dev-opportunities > .grid > div > div:nth-child(3) { min-height: 2.6em; }
+.dev-opportunities > .grid > div > .mt-2 { margin-top: auto; padding-top: 8px; }
+.dev-opportunities .pill-orange {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  padding: 5px 8px;
+  line-height: 1.4;
+}
+@container (max-width: 280px) {
+  .dev-opportunities > .grid { grid-template-columns: minmax(0, 1fr); }
+  .dev-opportunities > .grid > div > div:nth-child(2),
+  .dev-opportunities > .grid > div > div:nth-child(3) { min-height: 0; }
+}
 @media (max-width: 639px) {
   header > div { flex-wrap: wrap; }
   header > div > .relative { order: 3; flex-basis: 100%; max-width: none; }

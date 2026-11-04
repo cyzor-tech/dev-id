@@ -32,6 +32,18 @@ if (!app.includes('children:[o.years,')) throw new Error('Campo de experiência 
 app = app.replaceAll('children:[o.years,', 'children:[o.years.toLocaleString("pt-BR"),');
 app = app.replaceAll('onClick:()=>v(`${o.label} • Em breve`),className:',
   '"aria-label":o.label,title:o.label,onClick:()=>v(`${o.label} • Em breve`),className:');
+// Stable hooks keep layout corrections scoped to their respective cards.
+for (const [heading, className] of [
+  ['Alex Nakamura', 'dev-profile'],
+  [' Trajetória profissional', 'dev-career'],
+  [' Oportunidades', 'dev-opportunities'],
+]) {
+  const headingIndex = app.indexOf(JSON.stringify(heading));
+  const cardIndex = app.lastIndexOf('className:"card-premium', headingIndex);
+  if (headingIndex < 0 || cardIndex < 0) throw new Error(`Card não encontrado: ${heading}`);
+  const insertion = cardIndex + 'className:"card-premium'.length;
+  app = app.slice(0, insertion) + ` ${className}` + app.slice(insertion);
+}
 const unused = Object.keys(translations).filter((key) => !used.has(key));
 if (unused.length) throw new Error(`Traduções não aplicadas: ${unused.join(', ')}`);
 let html = (original.slice(0, start) + app + original.slice(end))
